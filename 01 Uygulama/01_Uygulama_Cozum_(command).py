@@ -10,7 +10,6 @@ class Example(Frame):
 
     def initUI(self):
         Style().configure("TButton", padding=(0, 5, 0, 5), width=8, font='serif 10')
-
         self.screenvar = StringVar()
         self.screenstr = ''
         self.screen = Label(self, textvariable=self.screenvar, justify=RIGHT)
@@ -180,7 +179,6 @@ class Example(Frame):
     def clsButtonEvent(self):
         self.screenstr = ''
         self.screenvar.set(self.screenstr)
-
 
 def main():
     root = Tk()
