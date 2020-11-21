@@ -230,4 +230,3 @@ def main():
     pencere.mainloop()
 main()
 con.close()
-a
