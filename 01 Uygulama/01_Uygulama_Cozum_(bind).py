@@ -1,8 +1,10 @@
 from tkinter import *
+
 class calculator(Frame):
     def __init__(self,parent):
         Frame.__init__(self,parent)
         self.buttons()
+        
     def buttons(self):
         self.var = StringVar()
         self.user_input_entry = Entry(self,textvariable = self.var,width=50)
@@ -32,6 +34,7 @@ class calculator(Frame):
             ,self.button_sub,self.button0,self.button_dot, self.button_equal, self.button_add]
         row = 1
         column = 0
+        
         for button in ButtonsList:
             button.grid(row = row, column = column , sticky =EW)
             button.bind("<ButtonRelease-1>",self.Calculation)
@@ -39,7 +42,9 @@ class calculator(Frame):
             if column == 4:
                 row += 1
                 column = 0
+                
         self.grid()
+        
     def Calculation(self,event):
         if event.widget["text"] == "Temizle":
             self.user_input_entry.delete(0, "end")
