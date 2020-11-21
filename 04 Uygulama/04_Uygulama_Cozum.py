@@ -8,7 +8,6 @@ class CopyTextFile(Frame):
         self.root = parent
         self.initUI()
 
-
     def initUI(self):
         self.label_head = Label(self, text = 'Copy Text File', bg = 'blue', fg = 'white', anchor = CENTER , font = ('', '20', 'bold'))
         self.label_head.pack(fill=X)
@@ -34,9 +33,6 @@ class CopyTextFile(Frame):
         self.progress_bar = Canvas(self, bg='grey', width =300, height = 20, borderwidth=2, relief='sunken')
         self.progress_bar.pack()
 
-
-
-
     def copy(self):
         input_file = self.input_file.get()
         output_file = self.output_file.get()
@@ -44,7 +40,6 @@ class CopyTextFile(Frame):
 
         piece_size = 1024 # 1 KiB
         step = 300 / float(file_size / piece_size) # progress size for each iteration
-
 
         with open(input_file, "rb") as in_file, open(output_file, "wb") as out_file:
             progress = 0
@@ -54,21 +49,16 @@ class CopyTextFile(Frame):
                 piece = in_file.read(piece_size) # read 1024 byte from the input file
                 progress += step  # update the progress
 
-
-
                 progress_label = 'Progress: %f completed' %progress  #progress label updated
                 self.progress_label.configure(text= progress_label)
 
                 #drawing the rectangle
                 self.progress_bar.create_rectangle(0, 0, progress, 25, fill="blue")  # 0,0 = sol ust , 0,0 = sag alt
 
-
                 self.update() #update the frame
-
 
                 out_file.write(piece) #write 1024 kb each step
                 time.sleep(0.00001) # to see the progress
-
 
 def main():
     root = Tk()
@@ -77,6 +67,4 @@ def main():
     app = CopyTextFile(root)
     app.pack(fill = BOTH, expand = True)
     root.mainloop()
-
-
 main()
