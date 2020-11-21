@@ -118,5 +118,4 @@ def main():
     root.geometry('600x350')
     app = ColorGame(root)
     root.mainloop()
-
 main()
