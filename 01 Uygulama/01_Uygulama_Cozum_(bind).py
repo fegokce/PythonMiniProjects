@@ -27,7 +27,6 @@ class calculator(Frame):
         self.button_empty = Button(self,text = "",relief = GROOVE)
         self.button_dot = Button(self,text = ".",relief = GROOVE)
         self.button_equal = Button(self,text = "=",relief = GROOVE)
-
         ButtonsList = [self.button_cls,self.button_back,self.button_empty,self.button_close,self.button7,self.button8,self.button9
                        ,self.button_div,self.button4,self.button5,self.button6,self.button_mult,self.button1,self.button2,self.button3
             ,self.button_sub,self.button0,self.button_dot, self.button_equal, self.button_add]
@@ -40,7 +39,6 @@ class calculator(Frame):
             if column == 4:
                 row += 1
                 column = 0
-
         self.grid()
     def Calculation(self,event):
         if event.widget["text"] == "Temizle":
